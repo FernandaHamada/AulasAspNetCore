@@ -1,6 +1,6 @@
 using System;
 
-namespace AulasAspNetCore.Models
+namespace AulasAspNetCore.Models.ViewModels
 {
     public class ErrorViewModel
     {
