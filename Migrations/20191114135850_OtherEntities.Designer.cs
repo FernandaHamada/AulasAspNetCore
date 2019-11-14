@@ -3,14 +3,16 @@ using System;
 using AulasAspNetCore.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AulasAspNetCore.Migrations
 {
     [DbContext(typeof(AulasAspNetCoreContext))]
-    partial class AulasAspNetCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20191114135850_OtherEntities")]
+    partial class OtherEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
