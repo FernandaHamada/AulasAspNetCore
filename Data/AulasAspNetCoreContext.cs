@@ -8,13 +8,14 @@ namespace AulasAspNetCore.Models
 {
     public class AulasAspNetCoreContext : DbContext
     {
-        public AulasAspNetCoreContext (DbContextOptions<AulasAspNetCoreContext> options)
+        public AulasAspNetCoreContext(DbContextOptions<AulasAspNetCoreContext> options)
             : base(options)
         {
         }
 
         public DbSet<Department> Department { get; set; }
-        public DbSet<SalesRecord> SalesRecords { get; set; }
         public DbSet<Seller> Seller { get; set; }
+        public DbSet<SalesRecord> SalesRecord { get; set; }
+
     }
 }

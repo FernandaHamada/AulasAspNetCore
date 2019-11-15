@@ -46,7 +46,7 @@ namespace AulasAspNetCore.Migrations
 
                     b.HasIndex("SellerId");
 
-                    b.ToTable("SalesRecords");
+                    b.ToTable("SalesRecord");
                 });
 
             modelBuilder.Entity("AulasAspNetCore.Models.Seller", b =>
