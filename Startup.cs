@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using AulasAspNetCore.Models;
 using AulasAspNetCore.Data;
+using AulasAspNetCore.Services;
 
 namespace AulasAspNetCore
 {
@@ -42,6 +43,7 @@ namespace AulasAspNetCore
                         builder.MigrationsAssembly("AulasAspNetCore")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
