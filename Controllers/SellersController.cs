@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AulasAspNetCore.Models;
 using AulasAspNetCore.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,18 @@ namespace AulasAspNetCore.Controllers
         {
             var list = _sellerService.FindAll();
             return View(list);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
