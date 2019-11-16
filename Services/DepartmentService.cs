@@ -4,27 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
 namespace AulasAspNetCore.Services
 {
-    public class SellerService
+    public class DepartmentService
     {
         private readonly AulasAspNetCoreContext _context;
 
-        public SellerService(AulasAspNetCoreContext context)
+        public DepartmentService(AulasAspNetCoreContext context)
         {
             _context = context;
         }
 
-        public List<Seller> FindAll()
+        public List<Department> FindAll()
         {
-            return _context.Seller.ToList();
-        }
-
-        public void Insert(Seller obj)
-        {
-            _context.Add(obj);
-            _context.SaveChanges();
+            return _context.Department.OrderBy(x => x.Name).ToList();
         }
     }
 }
