@@ -32,7 +32,7 @@ namespace AulasAspNetCore.Controllers
                 return NotFound();
             }
 
-            var department = await _context.Department
+            Department department = await _context.Department
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (department == null)
             {
@@ -72,7 +72,7 @@ namespace AulasAspNetCore.Controllers
                 return NotFound();
             }
 
-            var department = await _context.Department.FindAsync(id);
+            Department department = await _context.Department.FindAsync(id);
             if (department == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace AulasAspNetCore.Controllers
                 return NotFound();
             }
 
-            var department = await _context.Department
+            Department department = await _context.Department
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (department == null)
             {
@@ -138,7 +138,7 @@ namespace AulasAspNetCore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var department = await _context.Department.FindAsync(id);
+            Department department = await _context.Department.FindAsync(id);
             _context.Department.Remove(department);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
